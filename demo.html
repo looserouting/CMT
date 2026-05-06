@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMT - Consent Manager Test</title>
+  <!--
+    CMT Einbindung:
+    1. cmt-config.js – Konfiguration für Kategorien, Cookies & Skripte (vom Entwickler editierbar)
+    2. cmt.js        – Core-Engine: generiert Banner dynamisch, verwaltet Consent
+    WICHTIG: cmt-config.js MUSS VOR cmt.js geladen werden!
+  -->
+  <script src="cmt-config.js"></script>
+  <script src="cmt.js"></script>
+</head>
+<body>
+  <h1>Willkommen zur CMT-Demo</h1>
+  <p>Diese Seite demonstriert den Consent-Manager mit granularen Einstellungen.</p>
+
+  <h2>So funktioniert's</h2>
+  <ul>
+    <li><strong>cmt-config.js</strong> – Hier definiert der Entwickler Kategorien und einzelne Dienste (Cookies/Skripte).</li>
+    <li><strong>cmt.js</strong> – Generiert das Banner automatisch aus der Konfiguration.</li>
+    <li>Benutzer können <strong>jede Kategorie aufklappen</strong> (▶ klicken) und <strong>einzelne Dienste</strong> an-/abwählen.</li>
+  </ul>
+
+  <h2>Konsolen-Ausgabe</h2>
+  <p>Öffnen Sie die Browser-Konsole (F12), um die Consent-Logs zu sehen.</p>
+
+  <h2>Gespeicherten Consent zurücksetzen</h2>
+  <button onclick="localStorage.removeItem('cmt_consent'); location.reload();" style="padding:0.5em 1em;">
+    Consent löschen & neu laden
+  </button>
+
+</body>
+</html>
